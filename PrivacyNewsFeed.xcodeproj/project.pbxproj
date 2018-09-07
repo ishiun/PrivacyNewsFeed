@@ -12,6 +12,7 @@
 		4E1C38E921432E1D002869A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E1C38E821432E1D002869A1 /* Assets.xcassets */; };
 		4E1C38EC21432E1D002869A1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E1C38EA21432E1D002869A1 /* LaunchScreen.storyboard */; };
 		4E1C38F421432E3B002869A1 /* PrivacyNewsFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E1C38F321432E3B002869A1 /* PrivacyNewsFeedViewController.swift */; };
+		4E1C38F821433A1B002869A1 /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E1C38F721433A1B002869A1 /* NewsTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		4E1C38EB21432E1D002869A1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4E1C38ED21432E1D002869A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4E1C38F321432E3B002869A1 /* PrivacyNewsFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyNewsFeedViewController.swift; sourceTree = "<group>"; };
+		4E1C38F721433A1B002869A1 /* NewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,7 +56,8 @@
 		4E1C38E021432E1C002869A1 /* PrivacyNewsFeed */ = {
 			isa = PBXGroup;
 			children = (
-				4E1C38F321432E3B002869A1 /* PrivacyNewsFeedViewController.swift */,
+				4E1C38F621433A06002869A1 /* Controllers */,
+				4E1C38F5214339FD002869A1 /* Cells */,
 				4E1C38E121432E1C002869A1 /* AppDelegate.swift */,
 				4E1C38E521432E1C002869A1 /* Main.storyboard */,
 				4E1C38E821432E1D002869A1 /* Assets.xcassets */,
@@ -62,6 +65,22 @@
 				4E1C38ED21432E1D002869A1 /* Info.plist */,
 			);
 			path = PrivacyNewsFeed;
+			sourceTree = "<group>";
+		};
+		4E1C38F5214339FD002869A1 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				4E1C38F721433A1B002869A1 /* NewsTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		4E1C38F621433A06002869A1 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				4E1C38F321432E3B002869A1 /* PrivacyNewsFeedViewController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,6 +156,7 @@
 			files = (
 				4E1C38F421432E3B002869A1 /* PrivacyNewsFeedViewController.swift in Sources */,
 				4E1C38E221432E1C002869A1 /* AppDelegate.swift in Sources */,
+				4E1C38F821433A1B002869A1 /* NewsTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
