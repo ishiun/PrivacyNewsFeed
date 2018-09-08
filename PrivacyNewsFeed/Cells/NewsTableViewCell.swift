@@ -21,6 +21,7 @@ class NewsTableViewCell: UITableViewCell {
     
     @IBOutlet weak var posterImageView: UIImageView!
     
+    var redirectUrl = ""
     override func awakeFromNib() {
         super.awakeFromNib()
     }

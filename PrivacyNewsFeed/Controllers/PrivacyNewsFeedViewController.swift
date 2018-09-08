@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PrivacyNewsFeedViewController: UIViewController, UITableViewDataSource {
+class PrivacyNewsFeedViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet weak var newsFeedTableView: UITableView!
     
     var newsFeed: [[String:Any]] = []
@@ -16,6 +16,7 @@ class PrivacyNewsFeedViewController: UIViewController, UITableViewDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
         newsFeedTableView.dataSource = self
+        newsFeedTableView.delegate = self
         self.newsFeedTableView.rowHeight = 200.0
 
         let api_key = "d67b00c3969f4a4b82bd0de3c4e234cf"
@@ -49,11 +50,12 @@ class PrivacyNewsFeedViewController: UIViewController, UITableViewDataSource {
         let author = news["author"] as! String
         let imageUrlString = news["urlToImage"] as! String
         let imageUrl = URL(string: imageUrlString)
+        let redirectUrl = news["url"] as! String
         
         let data = try? Data(contentsOf: imageUrl!)
         cell.posterImageView.image = UIImage(data: data!)
         
-        
+        cell.redirectUrl = redirectUrl
         cell.titleLabel.text = title
         cell.sourceLabel.text = domain
         cell.descriptionLabel.text = description
@@ -61,6 +63,13 @@ class PrivacyNewsFeedViewController: UIViewController, UITableViewDataSource {
         cell.authorLabel.text = author
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cell = newsFeedTableView.dequeueReusableCell(withIdentifier: "NewsCell", for: indexPath as IndexPath) as! NewsTableViewCell
+        let urlString = cell.redirectUrl
+        let url = URL(string: urlString)
+        UIApplication.shared.openURL(url!)
     }
     
     override func didReceiveMemoryWarning() {
