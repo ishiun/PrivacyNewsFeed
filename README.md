@@ -3,6 +3,7 @@
 Simple news feed app that pulls data from NewsAPI (https://newsapi.org/docs/endpoints/everything) and displays in a table. Redirects to article on cell click.
 
 Video Demo
+
 https://imgur.com/a/qbti9Yi
 
 ## Further Considerations 
