@@ -59,7 +59,7 @@ class PrivacyNewsFeedViewController: UIViewController, UITableViewDataSource, UI
         cell.titleLabel.text = title
         cell.sourceLabel.text = domain
         cell.descriptionLabel.text = description
-        cell.dateLabel.text = date
+        cell.dateLabel.text = formatDate(dateString: date)
         cell.authorLabel.text = author
         
         return cell
@@ -70,6 +70,17 @@ class PrivacyNewsFeedViewController: UIViewController, UITableViewDataSource, UI
         let urlString = cell.redirectUrl
         let url = URL(string: urlString)
         UIApplication.shared.openURL(url!)
+    }
+    
+    func formatDate(dateString: String) -> String {
+        let dateFormatter = DateFormatter()
+        let tempLocale = dateFormatter.locale
+        dateFormatter.locale = Locale(identifier: "en_US_POSIX")
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+        let date = dateFormatter.date(from: dateString)!
+        dateFormatter.dateFormat = "MM-dd-yyyy"
+        dateFormatter.locale = tempLocale
+        return dateFormatter.string(from: date)
     }
     
     override func didReceiveMemoryWarning() {
